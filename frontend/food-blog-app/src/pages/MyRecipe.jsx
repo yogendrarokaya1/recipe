@@ -46,9 +46,11 @@ const MyRecipes = () => {
             <div className="recipe-cards-container">
                 {recipes.map((recipe) => (
                     <div key={recipe.id} className="recipe-card">
+                        <Link to={`/recipedetail/${recipe.id}`} className="recipe-link">
                         <img src={recipe.image_url} alt={recipe.title} className="recipe-image" />
                         <h3>{recipe.title}</h3>
                         <p>{recipe.time}</p>
+                        </Link>
                         <div className="button-group">
                             <Link to={`/editrecipe/${recipe.id}`}>
                                 <button>Edit</button>
